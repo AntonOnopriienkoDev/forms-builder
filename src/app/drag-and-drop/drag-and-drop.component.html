@@ -1,15 +1,17 @@
 <div cdkDropListGroup>
-	<div class="example-container">
-		<h2>Form Label</h2>
-
-		<div cdkDropList [cdkDropListData]="label" class="example-list" (cdkDropListDropped)="drag($event)">
-			<div class="example-box" *ngFor="let item of label" cdkDrag>
-				{{item}}
+	<div class=" label-wrapper">
+		<div class="example-container">
+			<h2>Form Label</h2>
+			<div cdkDropList [cdkDropListData]="label" class="example-list" (cdkDropListDropped)="drag($event)">
+				<div class="example-box" *ngFor="let item of label" cdkDrag>
+					{{item}}
+				</div>
 			</div>
 		</div>
+		<button class="btn btn-outline-secondary" (click)="label.splice(0,1)">Save form</button>
 	</div>
 
-	<div class="example-container">
+	<div class="example-container" style="display: inline-block;">
 
 		<div id="list" cdkDropList [cdkDropListData]="elems" class="example-list" cdkDropListSortingDisabled
 			(cdkDropListDropped)="drag($event)">

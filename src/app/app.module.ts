@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from '../app/login/login.component';
 import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { AccordionComponent } from './accordion/accordion.component';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     LoginComponent,
     HomeComponent,
 	 DragAndDropComponent,
+  AccordionComponent,
   ],
   imports: [
    BrowserModule,
    ReactiveFormsModule,
    HttpClientModule,
 	appRoutingModule,
-	DragDropModule
+	DragDropModule,
+	CdkAccordionModule
 	 
 	
   ],

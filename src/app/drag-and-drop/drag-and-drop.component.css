@@ -53,3 +53,11 @@
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
+
+.label-wrapper {
+	border: 1px solid black;
+	width: 400px;
+	text-align: center;
+	display: inline-block;
+	padding: 20px;
+} 

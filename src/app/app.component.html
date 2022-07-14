@@ -1,13 +1,13 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-	<div class="navbar-nav">
-		<a class="nav-item nav-link" routerLink="/">Home</a>
-		<a class="nav-item nav-link" (click)="logout()">Logout</a>
+<div *ngIf="currentUser" style="width: 1920px;">
+	<div style="display: flex; justify-content: space-between; border: 1px solid gray;">
+		<div style="font-size: 18px;">Hi, {{currentUser.username}}</div>
+		<div style="font-size: 36px">Form Builder</div>
+		<div><a class="nav-item nav-link" (click)="logout()">Logout</a>
+		</div>
 	</div>
-</nav>
+</div>
 
 <!-- main app container -->
 <div class="container">
-	<router-outlet>
-		<app-drag-and-drop></app-drag-and-drop>
-	</router-outlet>
+	<router-outlet></router-outlet>
 </div>

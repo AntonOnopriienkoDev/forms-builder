@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, copyArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, copyArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-drag-and-drop',
@@ -11,7 +11,7 @@ export class DragAndDropComponent implements OnInit {
   constructor() { }
 
 	ngOnInit(): void {
-		setTimeout(() => { this.label.splice(0,1)},1000)
+		if (this.label[0] === "") { setTimeout(() => { this.label.splice(0, 1) }, 1000) }
   }
   elems = ['Input', 'Textarea', 'CheckBox', 'Selector', 'Button'];
 

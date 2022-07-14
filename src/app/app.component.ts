@@ -23,11 +23,13 @@ export class AppComponent {
         private router: Router,
         private authenticationService: AuthenticationService
     ) {
-        this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+		 this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+		 console.log(this.currentUser)
     }
 
     logout() {
         this.authenticationService.logout();
         this.router.navigate(['/login']);
-    }
+	 }
+	
 }
