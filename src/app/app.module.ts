@@ -9,18 +9,22 @@ import { AppComponent } from './app.component';
 import { appRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from '../app/login/login.component';
+import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
+	 DragAndDropComponent,
   ],
   imports: [
    BrowserModule,
    ReactiveFormsModule,
    HttpClientModule,
- 	appRoutingModule
+	appRoutingModule,
+	DragDropModule
 	 
 	
   ],
