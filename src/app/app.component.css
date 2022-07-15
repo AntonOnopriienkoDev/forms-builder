@@ -1,4 +1,12 @@
-.main-container {
-	width: 1920px;
-	margin: 0 auto;
+.header {
+	display: flex; 
+	justify-content: space-between;
+	border-bottom: 1px solid  #C2D6E1;
+	margin-bottom: 21px;
+}
+.title {
+font-weight: 400;
+font-size: 36px;
+line-height: 44px;
+color: #172933;
 }

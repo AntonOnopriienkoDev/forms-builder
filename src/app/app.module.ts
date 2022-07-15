@@ -11,8 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from '../app/login/login.component';
 import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import { AccordionComponent } from './accordion/accordion.component';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
+import { FieldAccordionComponent } from './field-accordion/field-accordion.component';
+import { FormAccordionComponent } from './form-accordion/form-accordion.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     LoginComponent,
     HomeComponent,
 	 DragAndDropComponent,
-  AccordionComponent,
+
+  FieldAccordionComponent,
+  FormAccordionComponent,
   ],
   imports: [
    BrowserModule,
