@@ -1,8 +1,10 @@
+
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from './_services/authentication.service.ts';
 import { User } from "./_models/User";
+
 
 @Component({
   selector: 'app-root',
@@ -19,10 +21,12 @@ export class AppComponent {
     token: "",
 	};
 
-    constructor(
-        private router: Router,
-        private authenticationService: AuthenticationService
-    ) {
+
+	constructor(
+       private router: Router,
+		 private authenticationService: AuthenticationService,  
+	)
+	{
 		 this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
 		 console.log(this.currentUser)
     }
