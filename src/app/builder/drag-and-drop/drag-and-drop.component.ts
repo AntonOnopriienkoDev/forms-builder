@@ -41,9 +41,11 @@ export class DragAndDropComponent implements OnInit {
 			transferArrayItem(
 				event.previousContainer.data,
 				event.container.data,
-				event.previousIndex,
 				event.currentIndex,
+				event.previousIndex,
+				
 			);
+			console.log()
 		}
 	
 	}

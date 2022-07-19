@@ -7,6 +7,10 @@ import { CdkAccordionModule} from '@angular/cdk/accordion';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import {PortalModule} from '@angular/cdk/portal';
+
+
+
 
 import { JwtInterceptor } from './auth/_helpers/jwt-intersepter';
 import { ErrorInterceptor } from './auth/_helpers/error.intersepter';
@@ -21,6 +25,8 @@ import { FormAccordionComponent } from './builder/form-accordion/form-accordion.
 import { environment } from '../environments/environment';
 import { reducers, metaReducers } from './store/reducers';
 import { StoreModule } from '@ngrx/store';
+import { PortalComponent } from './portal/portal.component';
+
 
 
 @NgModule({
@@ -31,6 +37,7 @@ import { StoreModule } from '@ngrx/store';
 	DragAndDropComponent,
   	FieldAccordionComponent,
    FormAccordionComponent,
+   PortalComponent,
    
   ],
   imports: [
@@ -45,7 +52,8 @@ import { StoreModule } from '@ngrx/store';
 	StoreRouterConnectingModule.forRoot(),
 	StoreModule.forRoot(reducers, {
       metaReducers
-    })
+	}),
+	PortalModule
 	 
 	
   ],

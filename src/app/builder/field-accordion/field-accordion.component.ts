@@ -1,3 +1,4 @@
+import { HttpHandler } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,4 +13,7 @@ export class FieldAccordionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+	handleField() { 
+		console.log('click Field!')
+	}
 }

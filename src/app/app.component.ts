@@ -1,3 +1,5 @@
+import { LoginComponent } from './auth/login/login.component';
+import { DragAndDropComponent } from './builder/drag-and-drop/drag-and-drop.component';
 
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
