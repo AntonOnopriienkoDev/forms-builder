@@ -74,3 +74,23 @@
 	border-radius: 4px;
 	
 }
+.labelInput{
+	background-color: #fff;
+	border: none;
+}
+
+.labelTextarea{
+	border-radius: 4px;
+	width: 380px;
+	height: 30px;
+	padding: 0;
+	border: none;
+}
+.btnLabel {
+	background-color: #EEF2F4;
+	width: 155px;
+	height: 30px;
+	padding:  0 auto;
+	margin: 0 auto;
+	
+}

@@ -1,0 +1,34 @@
+<div cdkDropListGroup>
+	<div class=" label-wrapper">
+		Form Label
+
+		<div class="example-container">
+			<div cdkDropList [cdkDropListData]="label" class="example-list" (cdkDropListDropped)="drag($event)">
+
+				<div class="example-box" *ngFor="let item of label; let i = index" cdkDrag [ngSwitch]="label[i].type">
+					<input class="labelInput" placeholder="Input Label" *ngSwitchCase="'input'">
+					<button class="btnLabel" *ngSwitchCase="'button'">Button</button>
+					<textarea class="labelTextarea" *ngSwitchCase="'textarea'">some text</textarea>
+					<input type="checkbox" *ngSwitchCase="'checkbox'">
+
+					<select *ngSwitchCase="'select'">
+						<option value=""> Option label</option>
+					</select>
+
+				</div>
+
+			</div>
+		</div>
+
+		<button class="btn" (click)="label.splice(0,1)">Save form</button>
+	</div>
+	<div style="margin-left: 20px;display: inline;">
+		<div class="example-container" style="display: inline-block;">
+
+			<div id="list" cdkDropList [cdkDropListData]="elems" class="example-list" (cdkDropListDropped)="drag($event)"
+				cdkDropListSortingDisabled>
+				<div class="example-box" *ngFor="let item of elems" cdkDrag>{{item.type}}</div>
+			</div>
+		</div>
+	</div>
+</div>

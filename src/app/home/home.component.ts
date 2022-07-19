@@ -1,7 +1,7 @@
-import { UserService } from './../_services/user.service';
+import { UserService } from '../auth/_services/user.service';
 import { Component } from '@angular/core';
 import { first } from 'rxjs/operators';
-import { User } from "../_models/User";
+import { User } from "../auth/_models/User";
 
 
 @Component({

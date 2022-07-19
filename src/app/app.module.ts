@@ -8,23 +8,19 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
-import { JwtInterceptor } from './_helpers/jwt-intersepter';
-import { ErrorInterceptor } from './_helpers/error.intersepter';
-import { fakeBackendProvider } from './_helpers/fake-backend';
+import { JwtInterceptor } from './auth/_helpers/jwt-intersepter';
+import { ErrorInterceptor } from './auth/_helpers/error.intersepter';
+import { fakeBackendProvider } from './auth/_helpers/fake-backend';
 import { AppComponent } from './app.component';
 import { appRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from '../app/login/login.component';
-import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component'
-import { FieldAccordionComponent } from './field-accordion/field-accordion.component';
-import { FormAccordionComponent } from './form-accordion/form-accordion.component';
+import { LoginComponent } from './auth/login/login.component';
+import { DragAndDropComponent } from './builder/drag-and-drop/drag-and-drop.component'
+import { FieldAccordionComponent } from './builder/field-accordion/field-accordion.component';
+import { FormAccordionComponent } from './builder/form-accordion/form-accordion.component';
 import { environment } from '../environments/environment';
-import { reducers, metaReducers } from './reducers';
-
-
+import { reducers, metaReducers } from './store/reducers';
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './reducers/counter.reducer';
-import { MyCounterComponent } from './my-counter/my-counter.component';
 
 
 @NgModule({
@@ -35,7 +31,7 @@ import { MyCounterComponent } from './my-counter/my-counter.component';
 	DragAndDropComponent,
   	FieldAccordionComponent,
    FormAccordionComponent,
-   MyCounterComponent,
+   
   ],
   imports: [
    BrowserModule,

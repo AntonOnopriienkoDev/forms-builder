@@ -6815,6 +6815,11 @@
   "resolved" "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz"
   "version" "1.0.1"
 
+"uuid-generator-ts@^1.1.0":
+  "integrity" "sha512-Kv4pgpuAoVjb0bpSE6tzXDrjTiJMqNx12NabOXHM5YpU8NWH8SJQ+o1ljLgsgRVX2K7vzxsXUu/9Ck4h/279XQ=="
+  "resolved" "https://registry.npmjs.org/uuid-generator-ts/-/uuid-generator-ts-1.1.0.tgz"
+  "version" "1.1.0"
+
 "uuid@^8.3.2", "uuid@8.3.2":
   "integrity" "sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg=="
   "resolved" "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
