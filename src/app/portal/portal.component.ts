@@ -1,4 +1,4 @@
-import { AfterViewInit, ApplicationRef, Component, ComponentFactoryResolver, Injector, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ApplicationRef, Component, ComponentFactoryResolver, Injector, OnDestroy, ViewChild } from '@angular/core';
 import { CdkPortal,DomPortalHost} from '@angular/cdk/portal'
 @Component({
   selector: 'app-portal',
@@ -6,9 +6,9 @@ import { CdkPortal,DomPortalHost} from '@angular/cdk/portal'
 })
 export class PortalComponent implements AfterViewInit,OnDestroy {
 	@ViewChild(CdkPortal)
-	private portal!: CdkPortal;
+	private portal!: CdkPortal
 	private host!: DomPortalHost;
-	targetDiv!:string 
+	targetDiv!: string
 
 	constructor(
 		private componentFactoryResolver: ComponentFactoryResolver,

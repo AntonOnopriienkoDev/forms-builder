@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { formLabel,textColor,bgcColor,borderType,borderColor } from './form-styles.actions';
+import { formLabel,textColor,bgcColor,borderType,borderColor } from '../actions/form-styles.actions';
 
 export const initialState = 0;
 

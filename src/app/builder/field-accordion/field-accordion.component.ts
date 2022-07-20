@@ -1,5 +1,5 @@
-import { HttpHandler } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-field-accordion',
@@ -12,8 +12,23 @@ export class FieldAccordionComponent implements OnInit {
 
   ngOnInit(): void {
   }
+	
+	fieldStyle = new FormGroup({
+      label: new FormControl(),
+      width: new FormControl(),
+      height: new FormControl(),
+      fontSize: new FormControl(),
+      fontWeight: new FormControl(),
+      colorInput: new FormControl(),
+      borderStyle: new FormControl(),
+      requiredField: new FormControl(),
+  });
 
-	handleField() { 
-		console.log('click Field!')
+	
+	onSubmit() { 
+		
+		console.log(this.fieldStyle.value)
+		this.fieldStyle.reset()
 	}
+
 }

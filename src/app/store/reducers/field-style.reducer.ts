@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { selectLabel, width, fontSize,
 			fontWeight, colorInput, borderStyle,
-			requiredField, apply, deleteField } from './field-style.action'
+			requiredField, apply, deleteField } from '../actions/field-style.action'
 
 export const initialState = 0;
 export const fieldLabelReducer = createReducer(

@@ -10,13 +10,15 @@
 		</div>
 		<div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
 			[attr.id]="'accordion-body-'" [attr.aria-labelledby]="'accordion-header-'">
-			<input class="form-label" placeholder="form label">
-			<input placeholder="Text color RGB">
-			<input placeholder="Background color RGB">
-			<input placeholder="Border type">
-			<input placeholder="Border color RGB">
-			<br>
-			<button>Apply</button>
+			<form [formGroup]="formStyles" (submit)="onSubmit()">
+				<input formControlName="label" class="form-label" placeholder="form label">
+				<input formControlName="textColor" placeholder="Text color RGB">
+				<input formControlName="bcgColor" placeholder="Background color RGB">
+				<input formControlName="borderType" placeholder="Border type">
+				<input formControlName="borderColor" placeholder="Border color RGB">
+				<br>
+				<button>Apply</button>
+			</form>
 		</div>
 	</cdk-accordion-item>
 </cdk-accordion>

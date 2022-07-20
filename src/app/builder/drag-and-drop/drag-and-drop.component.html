@@ -5,15 +5,13 @@
 		<div class="example-container">
 			<div cdkDropList [cdkDropListData]="label" class="example-list" (cdkDropListDropped)="drag($event)">
 
-				<div class="example-box" *ngFor="let item of label; let i = index" cdkDrag [ngSwitch]="label[i].type">
-					<input class="labelInput" placeholder="Input Label" *ngSwitchCase="'input'">
-					<button class="btnLabel" *ngSwitchCase="'button'">Button</button>
-					<textarea class="labelTextarea" *ngSwitchCase="'textarea'">some text</textarea>
-					<input type="checkbox" *ngSwitchCase="'checkbox'">
-
-					<select *ngSwitchCase="'select'">
-						<option value=""> Option label</option>
-					</select>
+				<div class="example-box" *ngFor="let item of label; let i = index" [cdkDragData]="item" cdkDrag
+					[ngSwitch]="label[i].type">
+					<app-input class="labelInput" placeholder="Input Label" *ngSwitchCase="'input'"></app-input>
+					<app-button class="btnLabel" *ngSwitchCase="'button'"></app-button>
+					<app-textarea class="labelTextarea" *ngSwitchCase="'textarea'">some text</app-textarea>
+					<app-checkbox type="checkbox" *ngSwitchCase="'checkbox'"></app-checkbox>
+					<app-select *ngSwitchCase="'select'"></app-select>
 
 				</div>
 

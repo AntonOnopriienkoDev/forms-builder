@@ -23,9 +23,14 @@ import { DragAndDropComponent } from './builder/drag-and-drop/drag-and-drop.comp
 import { FieldAccordionComponent } from './builder/field-accordion/field-accordion.component';
 import { FormAccordionComponent } from './builder/form-accordion/form-accordion.component';
 import { environment } from '../environments/environment';
-import { reducers, metaReducers } from './store/reducers';
+import { reducers, metaReducers } from './store';
 import { StoreModule } from '@ngrx/store';
 import { PortalComponent } from './portal/portal.component';
+import { InputComponent } from './builder/fields/input.component';
+import { SelectComponent } from './builder/fields/select.component';
+import { ButtonComponent } from './builder/fields/button.component';
+import { TextareaComponent } from './builder/fields/textarea.component';
+import { CheckboxComponent } from './builder/fields/checkbox';
 
 
 
@@ -38,6 +43,11 @@ import { PortalComponent } from './portal/portal.component';
   	FieldAccordionComponent,
    FormAccordionComponent,
    PortalComponent,
+	InputComponent,
+	SelectComponent,
+	ButtonComponent,
+	TextareaComponent,
+	CheckboxComponent
    
   ],
   imports: [

@@ -10,22 +10,25 @@
 		</div>
 		<div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
 			[attr.id]="'accordion-body-'" [attr.aria-labelledby]="'accordion-header-'">
-			<input class="select-label" placeholder="Select label">
-			<input placeholder="Width">
-			<input placeholder="Height">
-			<input placeholder="Font Size">
-			<input placeholder="Font Weight">
-			<input placeholder="Color Input">
-			<input placeholder="Border Style">
+			<form [formGroup]="fieldStyle">
+				<input formControlName="label" class="select-label" placeholder="Select label">
+				<input formControlName="width" placeholder="Width">
+				<input formControlName="height" placeholder="Height">
+				<input formControlName="fontSize" placeholder="Font Size">
+				<input formControlName="fontWeight" placeholder="Font Weight">
+				<input formControlName="colorInput" placeholder="Color Input">
+				<input formControlName="borderStyle" placeholder="Border Style">
 
-			<br>
-			<label><input type="checkbox" style="width: 16px; height: 16px;">Required field</label>
-			<br>
-			<div style="text-align: center;">
-				<Button>Apply</Button>
-				<Button>Delete</Button>
-			</div>
-
+				<br>
+				<label><input formControlName="requiredField" type="checkbox" style="width: 16px; height: 16px;">Required
+					field</label>
+				<br>
+				<div style="text-align: center;">
+					<Button (click)="onSubmit()">Apply</Button>
+					<Button>Delete</Button>
+				</div>
+			</form>
 		</div>
 	</cdk-accordion-item>
+
 </cdk-accordion>
