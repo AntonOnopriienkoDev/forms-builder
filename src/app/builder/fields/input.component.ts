@@ -1,4 +1,6 @@
+import { selectorFields } from './../../store/formBuilder.selector';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-input',
@@ -6,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   
 })
 export class InputComponent implements OnInit {
-
-  constructor() { }
+  buidler$ = this.store.select(selectorFields)
+  constructor(private readonly store: Store ) { }
 
   ngOnInit(): void {
   }

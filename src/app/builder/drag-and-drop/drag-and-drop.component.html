@@ -6,7 +6,7 @@
 			<div cdkDropList [cdkDropListData]="label" class="example-list" (cdkDropListDropped)="drag($event)">
 
 				<div class="example-box" *ngFor="let item of label; let i = index" [cdkDragData]="item" cdkDrag
-					[ngSwitch]="label[i].type">
+					[ngSwitch]="label[i].name">
 					<app-input class="labelInput" placeholder="Input Label" *ngSwitchCase="'input'"></app-input>
 					<app-button class="btnLabel" *ngSwitchCase="'button'"></app-button>
 					<app-textarea class="labelTextarea" *ngSwitchCase="'textarea'">some text</app-textarea>
@@ -25,7 +25,7 @@
 
 			<div id="list" cdkDropList [cdkDropListData]="elems" class="example-list" (cdkDropListDropped)="drag($event)"
 				cdkDropListSortingDisabled>
-				<div class="example-box" *ngFor="let item of elems" cdkDrag>{{item.type}}</div>
+				<div class="example-box" *ngFor="let item of elems" cdkDrag>{{item.name}}</div>
 			</div>
 		</div>
 	</div>

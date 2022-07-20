@@ -1,8 +1,11 @@
+import { formStylesAction } from '../../store/formBuilder.actions';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { BuilderState } from 'src/app/store/formBuilder.reducer';
 
-interface FormsValues { 
-	label: string | undefined,
+export interface FormsValues { 
+	labelForm: string | undefined,
 	textColor: string | undefined,
    bcgColor: string | undefined,
    borderType: string | undefined,
@@ -18,7 +21,7 @@ interface FormsValues {
 	
 export class FormAccordionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<BuilderState>) { }
 
   ngOnInit(): void {
   }
@@ -32,15 +35,16 @@ export class FormAccordionComponent implements OnInit {
       borderColor: new FormControl(),
 	});
 	
-	onSubmit() { 
+	onSubmit() {
 		console.log(this.formStyles.value)
 		this.formValues = {
-			label: this.formStyles.value.label,
+			labelForm: this.formStyles.value.label,
 			textColor: this.formStyles.value.textColor,
 			bcgColor: this.formStyles.value.bcgColor,
 			borderType: this.formStyles.value.borderType,
 			borderColor: this.formStyles.value.borderColor,
 		}
+		this.store.dispatch(formStylesAction({formValues: this.formValues}))
 		this.formStyles.reset()
 		console.log(this.formValues)
 	}

@@ -1,3 +1,5 @@
+import { builderReducer } from './formBuilder.reducer';
+import { BuilderState } from 'src/app/store/formBuilder.reducer';
 import {
   ActionReducer,
   ActionReducerMap,
@@ -9,10 +11,11 @@ import { environment } from '../../environments/environment';
 
 
 export interface State {
-
+'builder': BuilderState
 }
 
 export const reducers: ActionReducerMap<State> = {
+builder: builderReducer
 };
 
 

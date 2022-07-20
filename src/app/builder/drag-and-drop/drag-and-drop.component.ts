@@ -1,10 +1,13 @@
+import { BuilderState } from './../../store/formBuilder.reducer';
 import { Component, OnInit} from '@angular/core';
 import { CdkDragDrop, copyArrayItem,transferArrayItem } from '@angular/cdk/drag-drop';
+import { Store } from '@ngrx/store';
+import { draggedActions } from 'src/app/store/formBuilder.actions';
 
 
-interface Item { 
-	type: string,
-	id: any
+export interface Item { 
+	name: string,
+	id: number
 }
 
 
@@ -15,15 +18,15 @@ interface Item {
 })
 	
 export class DragAndDropComponent implements OnInit {
-	constructor() { }
+	constructor(private store:Store<BuilderState>) { }
 	ngOnInit(): void {
 		setTimeout(() => {this.label.splice(0,1) },500)
 	}
 
 
-	elems = [{ type: "input", id: 0 }, { type: "textarea", id: 0  }, { type: "select", id: 0  }, { type: 'button', id: 0 }, { type: 'checkbox', id: 0  }];
+	elems = [{ name: "input", id: 0 }, { name: "textarea", id: 0  }, { name: "select", id: 0  }, { name: 'button', id: 0 }, { name: 'checkbox', id: 0  }];
 
-	label = [{ type: 'test', id: 0 }];
+	label = [{ name: 'test', id: 0 }];
 
 
 	drag(event: CdkDragDrop<Item[]>) {
@@ -35,6 +38,8 @@ export class DragAndDropComponent implements OnInit {
 				event.previousIndex,
 				event.currentIndex
 			)
+			console.log(event.previousContainer.data[event.previousIndex])
+			this.store.dispatch(draggedActions({ id: Date.now(), name: event.container.data[event.previousIndex].name }))
 	
 		}
 		if (event.container === event.previousContainer && event.previousContainer.id !== 'list') {

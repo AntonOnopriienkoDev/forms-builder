@@ -7,7 +7,8 @@ import { CdkAccordionModule} from '@angular/cdk/accordion';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import {PortalModule} from '@angular/cdk/portal';
+import { PortalModule } from '@angular/cdk/portal';
+import { reducers,metaReducers } from  '../app/store/index'
 
 
 
@@ -23,7 +24,6 @@ import { DragAndDropComponent } from './builder/drag-and-drop/drag-and-drop.comp
 import { FieldAccordionComponent } from './builder/field-accordion/field-accordion.component';
 import { FormAccordionComponent } from './builder/form-accordion/form-accordion.component';
 import { environment } from '../environments/environment';
-import { reducers, metaReducers } from './store';
 import { StoreModule } from '@ngrx/store';
 import { PortalComponent } from './portal/portal.component';
 import { InputComponent } from './builder/fields/input.component';
@@ -35,32 +35,32 @@ import { CheckboxComponent } from './builder/fields/checkbox';
 
 
 @NgModule({
-  declarations: [
-   AppComponent,
-   LoginComponent,
-   HomeComponent,
-	DragAndDropComponent,
-  	FieldAccordionComponent,
-   FormAccordionComponent,
-   PortalComponent,
-	InputComponent,
-	SelectComponent,
-	ButtonComponent,
-	TextareaComponent,
-	CheckboxComponent
+	declarations: [
+		AppComponent,
+		LoginComponent,
+		HomeComponent,
+		DragAndDropComponent,
+		FieldAccordionComponent,
+		FormAccordionComponent,
+		PortalComponent,
+		InputComponent,
+		SelectComponent,
+		ButtonComponent,
+		TextareaComponent,
+		CheckboxComponent
    
-  ],
-  imports: [
-   BrowserModule,
-   ReactiveFormsModule,
-   HttpClientModule,
-	appRoutingModule,
-	DragDropModule,
-	CdkAccordionModule,
-	StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-	EffectsModule.forRoot([]),
-	StoreRouterConnectingModule.forRoot(),
-	StoreModule.forRoot(reducers, {
+	],
+	imports: [
+		BrowserModule,
+		ReactiveFormsModule,
+		HttpClientModule,
+		appRoutingModule,
+		DragDropModule,
+		CdkAccordionModule,
+		StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+		EffectsModule.forRoot([]),
+		StoreRouterConnectingModule.forRoot(),
+		StoreModule.forRoot(reducers, {
       metaReducers
 	}),
 	PortalModule
