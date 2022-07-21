@@ -60,9 +60,7 @@ import { CheckboxComponent } from './builder/fields/checkbox';
 		StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
 		EffectsModule.forRoot([]),
 		StoreRouterConnectingModule.forRoot(),
-		StoreModule.forRoot(reducers, {
-      metaReducers
-	}),
+		StoreModule.forRoot(reducers, { metaReducers}),environment.production ? StoreDevtoolsModule.instrument():[],
 	PortalModule
 	 
 	

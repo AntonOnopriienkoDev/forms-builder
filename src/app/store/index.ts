@@ -15,7 +15,7 @@ export interface State {
 }
 
 export const reducers: ActionReducerMap<State> = {
-builder: builderReducer
+'builder': builderReducer
 };
 
 

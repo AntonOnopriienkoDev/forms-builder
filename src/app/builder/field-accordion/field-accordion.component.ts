@@ -5,13 +5,13 @@ import { Store } from '@ngrx/store';
 import { BuilderState } from 'src/app/store/formBuilder.reducer';
 
 export interface FieldsValues { 
-	labelField: any
+	labelField: string
 	width: string | number
 	height: string | number
 	fontSize: string | number
 	fontWeight: string | number
 	colorInput: string | number
-	borderStyle: string | number
+	borderStyle: string
 	requiredField: boolean
 }
 
@@ -54,7 +54,8 @@ export class FieldAccordionComponent implements OnInit {
 			requiredField: this.fieldStyle.value.requiredField,
 			fontWeight: this.fieldStyle.value.fontWeight,
 		}
-		this.store.dispatch(fieldStylesAction({fieldsValues:this.fieldsValues}))
+		this.store.dispatch(fieldStylesAction({ fieldsValues: this.fieldsValues }))
+		
 		this.fieldStyle.reset()
 		console.log(this.fieldsValues)
 	}

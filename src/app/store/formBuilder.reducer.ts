@@ -12,18 +12,16 @@ export interface BuilderState {
 	formStyles: FormsValues,
 	item: Item
 } 
- 
 export const initialState: BuilderState = {
-
 	fieldStyles: {
 
-		labelField: "labelField",
-		width: 400,
+		labelField: "Name",
+		width: 380,
 		height: 50,
-		fontSize: 16,
+		fontSize: 14,
 		fontWeight: 400,
 		colorInput: 'red',
-		borderStyle: '1px solid black',
+		borderStyle: 'none',
 		requiredField: true,
 	},
 	formStyles: {
@@ -38,11 +36,11 @@ export const initialState: BuilderState = {
 		id: 0
 	}
 };
-
-export const builderReducer = createReducer (
+export const builderReducer = createReducer(
 	initialState,
 	on(draggedActions, (state, { id, name }) => ({ ...state, name, id })),
-	on(fieldStylesAction, (state, { fieldsValues }) => ({
+	on(fieldStylesAction, (state, { fieldsValues }) =>  (
+		{
 	...state,
 	labelField: fieldsValues.labelField,
 	width:fieldsValues.width,
@@ -51,7 +49,8 @@ export const builderReducer = createReducer (
 	fontWeight:fieldsValues.fontWeight,
 	colorInput:fieldsValues.colorInput,
 	borderStyle:fieldsValues.borderStyle,
-	requiredField:fieldsValues.requiredField,
+	requiredField: fieldsValues.requiredField
+	
 })),
 	on(formStylesAction, (state, { formValues }) => ({
 		...state,
@@ -61,7 +60,6 @@ export const builderReducer = createReducer (
 		borderType:formValues.borderType,
 		borderColor:formValues.borderColor
 	}))
-  
 );
 
 

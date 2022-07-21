@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-select',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store) { }
 
 	ngOnInit(): void {
 	  
